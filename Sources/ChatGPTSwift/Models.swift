@@ -55,6 +55,19 @@ struct Choice: Decodable {
     let message: Message
 }
 
+
+struct StreamResponse: Decodable {
+    let id: String
+    let object: String
+    let created: Int
+    let model: String
+    let choices: [StreamChoice]
+}
+
+struct RawStreamResponse: Decodable {
+    let data: StreamResponse
+}
+
 struct StreamCompletionResponse: Decodable {
     let choices: [StreamChoice]
 }
